@@ -1,20 +1,28 @@
 "use script";
-
-import axios from "axios";
+import verifyError from "./veryfy";
+import { postLogin, getMatched } from "./request";
 
 const form = document.querySelector("#form-login");
-const error = document.querySelector(".error-message");
+export const error = document.querySelector(".error-message");
+
 form.addEventListener("submit", handleLogin);
 
 function handleLogin(e) {
   e.preventDefault();
   verifyError();
-  GetInfo()
-    .then(user => postLogin(user))
-    .catch(err => {
-      error.textContent = err.response.data;
-      error.classList.add("isShown");
-    });
+  showMatch();
+}
+
+async function showMatch() {
+  //login in form
+  const user = await GetInfo();
+  //send login
+  const { data } = await postLogin(user);
+  const TOKEN = data.token;
+  // get login data
+  const matches = await getMatched(TOKEN);
+  console.log(matches);
+  document.location.replace("/geo/swiper.html");
 }
 
 function GetInfo() {
@@ -25,22 +33,4 @@ function GetInfo() {
       password: userPassword.value
     });
   });
-}
-
-function verifyError() {
-  const elements = document.querySelectorAll("#form-login input");
-
-  for (let i = 0, element; (element = elements[i++]); ) {
-    if (element.value === "") {
-      element.classList.add("error");
-    } else {
-      element.classList.remove("error");
-    }
-  }
-}
-
-function postLogin(obj) {
-  const LINK = "https://venify.herokuapp.com/user/login";
-  error.classList.remove("isShown");
-  return axios.post(LINK, obj);
 }
