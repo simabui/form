@@ -54,7 +54,7 @@ module.exports = {
       canPrint: true
     }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/pug/index.pug",
       minify: {
         collapseWhitespace: true,
         removeComments: true,

@@ -1,7 +1,9 @@
 "use script";
 
-const form = document.querySelector("#form-login");
+import axios from "axios";
 
+const form = document.querySelector("#form-login");
+const error = document.querySelector(".error-message");
 form.addEventListener("submit", handleLogin);
 
 function handleLogin(e) {
@@ -9,7 +11,10 @@ function handleLogin(e) {
   verifyError();
   GetInfo()
     .then(user => postLogin(user))
-    .catch(err => console.log(err.response.data));
+    .catch(err => {
+      error.textContent = err.response.data;
+      error.classList.add("isShown");
+    });
 }
 
 function GetInfo() {
@@ -36,6 +41,6 @@ function verifyError() {
 
 function postLogin(obj) {
   const LINK = "https://venify.herokuapp.com/user/login";
-
+  error.classList.remove("isShown");
   return axios.post(LINK, obj);
 }
