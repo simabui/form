@@ -22,7 +22,7 @@ async function showMatch() {
   // get login data
   const matches = await getMatched(TOKEN);
   console.log(matches);
-  document.location.replace("/geo/swiper.html");
+  document.location.replace("/form/dist/swiper.html");
 }
 
 function GetInfo() {
