@@ -1,5 +1,5 @@
 "use script";
-import verifyError from "./veryfy";
+import verifyError from "./verify";
 import { postLogin, getMatched } from "./request";
 
 const form = document.querySelector("#form-login");
@@ -13,7 +13,7 @@ function handleLogin(e) {
   showMatch();
 }
 
-async function showMatch() {
+export async function showMatch() {
   //login in form
   const user = await GetInfo();
   //send login
@@ -21,8 +21,9 @@ async function showMatch() {
   const TOKEN = data.token;
   // get login data
   const matches = await getMatched(TOKEN);
-  console.log(matches);
+
   document.location.replace("/form/dist/swiper.html");
+  return matches;
 }
 
 function GetInfo() {
