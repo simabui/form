@@ -11,8 +11,9 @@ export default async function() {
   const TOKEN = data.token;
   // get login data
   const matches = await getMatched(TOKEN);
-  // go to another layout
+  //add to local
   setUser(matches);
+  // go to another layout
   document.location.replace("/form/dist/swiper.html");
 }
 

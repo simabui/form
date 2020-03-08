@@ -6,7 +6,6 @@ export const error = document.querySelector(".error-message");
 
 export function logUser() {
   if (!document.querySelector("#LOGIN")) {
-    console.log("test");
     return;
   }
   const form = document.querySelector("#form-login");
