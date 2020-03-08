@@ -13,7 +13,7 @@ export default async function() {
   const matches = await getMatched(TOKEN);
   // go to another layout
   setUser(matches);
-  // document.location.replace("/form/dist/swiper.html");
+  document.location.replace("/form/dist/swiper.html");
 }
 
 //get user from form
