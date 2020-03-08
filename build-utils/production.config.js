@@ -53,17 +53,6 @@ module.exports = {
       },
       canPrint: true
     }),
-    // new HtmlWebpackPlugin({
-    //   template: "./src/pug/index.pug",
-    //   minify: {
-    //     collapseWhitespace: true,
-    //     removeComments: true,
-    //     removeRedundantAttributes: true,
-    //     removeScriptTypeAttributes: true,
-    //     removeStyleLinkTypeAttributes: true,
-    //     useShortDoctype: true
-    //   }
-    // }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/pug/index.pug",
@@ -79,6 +68,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "swiper.html",
       template: "./src/pug/swiper.pug",
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "registration.html",
+      template: "./src/pug/registration.pug",
       minify: {
         collapseWhitespace: true,
         removeComments: true,

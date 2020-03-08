@@ -1,6 +1,7 @@
 .container {
   max-width: 1110px;
   margin: 10px auto;
+  text-align: center;
 }
 .error {
   outline: 1px solid #ff0000;
@@ -11,4 +12,13 @@
 }
 .isShown {
   display: block;
+}
+
+.error-form {
+  border: 1px solid red;
+}
+.pass-error {
+  font-size: 14px;
+  color: red;
+  display: none;
 }

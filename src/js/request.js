@@ -16,3 +16,8 @@ export function getMatched(key) {
     }
   });
 }
+
+export function registerUser(user) {
+  const link = "https://venify.herokuapp.com/user/register";
+  return axios.post(link, user);
+}

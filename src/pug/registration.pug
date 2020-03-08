@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title="Registration"
+  body#REGISTRATION
+    .container
+      h1 Love Lodestone
+      form#form-register
+        br
+        input#fname(type='text' name='name')
+        br
+        br
+        label(for='pname') Profile name:
+        br
+        input#lname(type='text' name='pname')
+        br
+        br
+        p Sex:
+        input#male(type='radio' name='gender' value='male' checked='')
+        label(for='male') Male
+        br
+        input#female(type='radio' name='gender' value='female')
+        label(for='female') Female
+        br
+        label(for='age') Specify age:
+        br
+        input#fage(type='number' name='age')
+        br
+        br
+        label(for='phone') Phone:
+        br
+        input#phone(type='tel' name='phone')
+        br
+        br
+        label(for='pass') Password:
+        br
+        input#pwd(type='password' name='pass')
+        br
+        br
+        span.pass-error Pass must contain at least have 1 lowerCase,Uppercase,number
+        input(type='submit' value='Create Account')
+      a(href="/form/dist/index.html")

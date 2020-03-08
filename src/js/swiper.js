@@ -1,6 +1,5 @@
 import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
-import showMatch from "./showMatch";
 import { getUser } from "./localStorage";
 import slideTemplate from "../templates/slide.hbs";
 
