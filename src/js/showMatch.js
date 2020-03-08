@@ -1,4 +1,5 @@
 import { postLogin, getMatched } from "./request";
+import { setUser } from "./localStorage";
 
 const form = document.querySelector("#form-login");
 
@@ -11,8 +12,8 @@ export default async function() {
   // get login data
   const matches = await getMatched(TOKEN);
   // go to another layout
-  document.location.replace("/form/dist/swiper.html");
-  return matches;
+  setUser(matches);
+  // document.location.replace("/form/dist/swiper.html");
 }
 
 //get user from form

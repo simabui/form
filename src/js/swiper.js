@@ -1,6 +1,7 @@
 import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 import showMatch from "./showMatch";
+import { getUser } from "./localStorage";
 import slideTemplate from "../templates/slide.hbs";
 
 export function initSwiper() {
@@ -24,7 +25,10 @@ export function initSwiper() {
 
   //async recieving object of user with matched imgs list
   async function userMatches() {
-    const { data } = await showMatch();
+    //take user from local
+    const user = getUser();
+
+    const { data } = user;
     const imgArr = data.map(({ image_list }) => image_list[0]);
     const temps = slideTemplate(imgArr);
 
