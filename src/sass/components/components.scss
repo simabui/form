@@ -14,11 +14,12 @@
   display: block;
 }
 
-.error-form {
-  border: 1px solid red;
-}
 .pass-error {
   font-size: 14px;
   color: red;
   display: none;
+  position: absolute;
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 14px;
 }

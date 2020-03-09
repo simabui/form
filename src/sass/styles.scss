@@ -1,4 +1,12 @@
-@import "normalize";
-@import "base";
-@import "components";
-@import "swiper";
+//HELPERS
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/smart-grid";
+//BASE
+@import "base/normalize";
+@import "base/fonts";
+@import "base/base";
+//COMPONENTS
+@import "components/components";
+@import "components/swiper";
+@import "components/registration";

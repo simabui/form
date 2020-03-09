@@ -1,0 +1,96 @@
+.reg-section {
+  padding: 50px 132px;
+  background-color: $background-color;
+  color: $main-color;
+}
+.reg-title {
+  font-size: 48px;
+  font-weight: 700;
+}
+.logos {
+  width: 72.53px;
+  height: 100px;
+  background: url("../images/logo.svg") no-repeat top left;
+  margin: 0 auto 82px auto;
+}
+
+.form-reg {
+  width: 475px;
+  margin: 0 auto;
+  text-align: left;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $main-color;
+    margin-bottom: 20px;
+    margin-top: 42px;
+  }
+
+  &__input {
+    background: transparent;
+    color: $main-color;
+    font-weight: 700;
+    padding: 12px 0 12px 5px;
+    width: 475px;
+    border: 2px solid $main-color;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  &__radio {
+    font-weight: 700;
+    position: relative;
+    // round
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      border: 2px solid $main-color;
+      border-radius: 50%;
+      margin-right: 19px;
+    }
+  }
+
+  &__button {
+    @extend %button;
+    margin-top: 70px;
+    padding: 26px 0;
+    font-size: 24px;
+  }
+
+  &__link {
+    margin-top: 10px;
+    text-align: right;
+    & a {
+      text-decoration: none;
+      color: $main-color;
+    }
+
+    &:hover a {
+      color: #786133;
+    }
+  }
+}
+// checked
+.radio:checked + .form-reg__radio > .radio-center {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background-color: $main-color;
+  border-radius: 50%;
+  position: absolute;
+  left: 4px;
+  bottom: 8px;
+}
+.radio {
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+}
+.error-form {
+  border: 2px solid red;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+}

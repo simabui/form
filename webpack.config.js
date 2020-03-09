@@ -55,13 +55,13 @@ module.exports = env =>
             use: "handlebars-loader"
           },
           {
-            test: /\.(png|jpe?g|gif)$/i,
+            test: /\.(jpg|svg|png)$/i,
             use: [
               {
                 loader: "url-loader",
                 options: {
                   name: "images/[name].[ext]",
-                  limit: 5000,
+                  limit: 10000,
                   esModule: false
                 }
               }
