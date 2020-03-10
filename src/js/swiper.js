@@ -18,6 +18,11 @@ export function initSwiper() {
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
+      },
+      // Pagination
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets"
       }
     });
   }

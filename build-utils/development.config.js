@@ -12,8 +12,8 @@ module.exports = {
   },
   plugins: [
     // new HtmlWebpackPlugin({ template: "./src/pug/registration.pug" })
-    new HtmlWebpackPlugin({ template: "./src/pug/index.pug" })
-    // new HtmlWebpackPlugin({ template: "./src/pug/swiper.pug" })
+    // new HtmlWebpackPlugin({ template: "./src/pug/index.pug" })
+    new HtmlWebpackPlugin({ template: "./src/pug/swiper.pug" })
   ],
   devServer: {
     stats: "errors-only"

@@ -1,3 +1,10 @@
+.section-swiper {
+  background-color: $background-color;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .swiper-container {
   width: 600px;
   height: 300px;
