@@ -9,12 +9,12 @@ html(lang="en")
     section.reg-section
       .container
         .logos
-        h1.reg-title Love Lodestone
+        h1.title Love Lodestone
         form#form-register.form-reg
           p.form-reg__title Create user name (login)
-          input(type='text' name='name' id="fname" class="form-reg__input")
+          input(type='text' name='name' id="fname" autocomplete="off" class="form-reg__input")
           p.form-reg__title Profile name:
-          input(type='text' name='pname' id="lname" class="form-reg__input")
+          input(type='text' name='pname' id="lname" autocomplete="off" class="form-reg__input")
           p.form-reg__title Sex:
           input(type='radio' name='gender' value='male' checked id="male" class="radio")
           label(for='male' class="form-reg__radio") Male
@@ -25,7 +25,7 @@ html(lang="en")
           p.form-reg__title Specify age:
           input(type='number' name='age' class="form-reg__input" id="fage")
           p.form-reg__title Phone:
-          input(type='tel' name='phone' class="form-reg__input" id="phone" )
+          input(type='tel' name='phone' class="form-reg__input" autocomplete="off" id="phone" )
           p.form-reg__title Password:
           input(type='password' name='pass' class="form-reg__input" id="pwd")
           span.pass-error Pass must contain at least have 1 lowerCase,Uppercase,number

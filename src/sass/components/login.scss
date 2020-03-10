@@ -1,0 +1,62 @@
+.section-login {
+  background-color: $background-color;
+  height: 1080px;
+  padding-top: 70px;
+  color: $main-color;
+
+  .logos {
+    margin-bottom: 50px;
+  }
+}
+
+.form-login {
+  width: 475px;
+  margin: 0 auto;
+  text-align: left;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    width: 100%;
+    background: transparent;
+    color: $main-color;
+    font-weight: 700;
+    border: 2px solid $main-color;
+    border-radius: 10px;
+    outline: none;
+    padding: 12px 0 12px 5px;
+  }
+
+  &__button {
+    @extend %button;
+    margin-top: 70px;
+    padding: 26px 0;
+    font-size: 24px;
+  }
+
+  .link {
+    margin-top: 29px;
+    text-align: right;
+
+    &__text {
+      color: $main-color;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:hover {
+        border-bottom: 1px solid $main-color;
+      }
+    }
+  }
+}
+.error-message {
+  position: absolute;
+  font-size: 18px;
+  margin-top: 10px;
+  color: red;
+}
