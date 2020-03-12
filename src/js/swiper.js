@@ -2,6 +2,8 @@ import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 import { getUser } from "./localStorage";
 import slideTemplate from "../templates/slide.hbs";
+import { getGeoLocation } from "./registration";
+import darkTheme from "../templates/darkTheme.json";
 
 export function initSwiper() {
   if (!document.querySelector("#SWIPER")) return;
@@ -41,4 +43,26 @@ export function initSwiper() {
   }
 
   userMatches();
+
+  //google map
+  window.onload = async function() {
+    let myLatLng = await getGeoLocation();
+    var styledMapType = new google.maps.StyledMapType(darkTheme, {
+      name: "Styled Map"
+    });
+    let map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: myLatLng
+    });
+
+    // set marker
+    let marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map
+    });
+
+    //set dark theme
+    map.mapTypes.set("styled_map", styledMapType);
+    map.setMapTypeId("styled_map");
+  };
 }

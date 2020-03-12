@@ -55,13 +55,13 @@ export function register() {
 }
 
 //geo of user
-async function getGeoLocation() {
+export async function getGeoLocation() {
   const coords = await new Promise(resolve => {
     navigator.geolocation.watchPosition(({ coords }) => resolve(coords));
   });
   return {
-    latitude: coords.latitude,
-    longitude: coords.longitude
+    lat: coords.latitude,
+    lng: coords.longitude
   };
 }
 
