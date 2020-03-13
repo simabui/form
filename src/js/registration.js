@@ -39,6 +39,7 @@ export function register() {
       coordsObj
     );
     registerUser(userData).catch(err => console.log(err));
+    document.location.replace("/form/dist/login.html");
   }
 
   function passVerify() {
